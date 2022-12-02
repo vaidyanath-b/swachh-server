@@ -17,5 +17,5 @@ const RequestSchema = new Schema({
   }
 })
 
-const Request = mongoose.model('chrps', RequestSchema)
+const Request = mongoose.model('request', RequestSchema)
 module.exports = Request
