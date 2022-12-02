@@ -2,9 +2,8 @@ const express = require('express')
 const router = express.Router()
 const newreq = require("./newrequestRoutes.js");
 
-router.use("/createnewrequest", newreq)
+router.use("/newrequest", newreq)
 
-const Request = require('../models/Request')
 
 router.get('/', (req, res) => {
   res.send('dfadf')
