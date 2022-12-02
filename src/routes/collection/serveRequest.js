@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const CollectionReport = requrie("../../models/Collection")
+const CollectionReport = require("../../models/Collection")
 
 router.use('/', (req, res) => {
     try {
