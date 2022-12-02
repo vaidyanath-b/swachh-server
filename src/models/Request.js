@@ -14,6 +14,14 @@ const RequestSchema = new Schema({
   date: {
     type: Date,
     default: Date.now
+  },
+  typeofwaste: {
+    ewaste: Boolean,
+    plastic: Boolean,
+    foodwaste: Boolean,
+    other: Boolean
+
+
   }
 })
 
