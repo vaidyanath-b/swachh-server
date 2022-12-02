@@ -1,4 +1,5 @@
 const express = require('express')
+const Request = require('../../models/Request')
 const router = express.Router()
 const newreq = require("./newrequestRoutes.js");
 
@@ -9,13 +10,13 @@ router.get('/', (req, res) => {
   res.send('dfadf')
 })
 
-router.get('/viewallRequests', (req, res) => {
+router.get('/viewallRequests', async (req, res) => {
   try {
-    const requests = Request.find();
-    res.status(200).json({ message: "All requests displayed", requests: requests });
+    const requests = await Request.find();
+    return res.status(200).json({ message: "All requests displayed", requests: requests });
   }
   catch (err) {
-    res.status(401).json({ message: "something wrong occured" });
+    res.status(401).json({ error: err });
   }
 })
 

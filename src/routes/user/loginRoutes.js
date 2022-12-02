@@ -17,11 +17,15 @@ router.post('/', async (req, res) => {
       res.status(200).json({
         message: "Logged in",
         username: user.username
+
       })
     }
+    else return res.status(401).json({
+      message: "invalid password"
+    })
   }
   catch (err) {
-    return res.status(200).json({ error: err })
+    return res.status(401).json({ error: err })
   }
 });
 
