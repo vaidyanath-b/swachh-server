@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const User = require("../models/User");
+const User = require("../../models/User");
 
 
 router.get('/', (req, res) => {
@@ -13,9 +13,9 @@ router.post('/', async (req, res) => {
             res.status(401).json({ error: "invalid username" })
         if (!password)
             res.status(200).json({ error: "invalid pasword" })
-        if (!firstname)
+        if (!firstName)
             res.status(200).json({ error: "invalid firstname" })
-        if (!password)
+        if (!lastName)
             res.status(200).json({ error: "invalid lastname" })
 
         const user = await User.create({
