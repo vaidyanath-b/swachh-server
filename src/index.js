@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const user = require('./routes/user/userRoutes');
 const request = require('./routes/request/requestRoutes');
 const collect = require('./routes/collection/collectionRoutes');
+const serve = require('./routes/collection/serveRequest')
 const app = express();
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
@@ -24,6 +25,7 @@ mongoose.connection.on('connected', () => {
 app.use('/user', user);
 app.use('/request', request);
 app.use('/collect', collect);
+app.use('/serve', serve);
 
 
 

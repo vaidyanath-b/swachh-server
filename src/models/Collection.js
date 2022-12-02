@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 
-Wastedata = mongoose.schema()
 const CollectionReport = mongoose.Schema({
     username: {
         type: String,
@@ -46,3 +45,4 @@ const CollectionReport = mongoose.Schema({
 }
 
 )
+module.exports = mongoose.model("collection-reports", CollectionReport);
