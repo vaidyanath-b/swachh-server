@@ -1,14 +1,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const user = require('./routes/userRoutes');
-const request = require('./routes/requestRoutes');
+const user = require('./routes/user/userRoutes');
+const request = require('./routes/request/requestRoutes');
+const collect = require('./routes/collection/collectionRoutes');
 const app = express();
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 dotenv.config();
-
+const cors = require('cors');
 app.use(bodyParser.json());
-
+app.use(cors());
 
 
 
@@ -22,6 +23,7 @@ mongoose.connection.on('connected', () => {
 
 app.use('/user', user);
 app.use('/request', request);
+app.use('/collect', collect);
 
 
 
