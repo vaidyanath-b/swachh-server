@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express();
+const Request = require("../../models/Request");
 
-router.get('/collect', (req, res) => {
+viewrequest = require('../../controllers/viewrequestcontroller');
 
-}
-)
+router.get('/viewrequests', viewrequest)
 module.exports = router
