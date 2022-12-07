@@ -1,5 +1,11 @@
 const mongoose = require('mongoose')
 
+wastetype = mongoose.Schema({
+    iscollected: { type: Boolean, default: false },
+    quantity: String,
+    value: String
+})
+
 const CollectionReport = mongoose.Schema({
     username: {
         type: String,
@@ -19,26 +25,10 @@ const CollectionReport = mongoose.Schema({
     },
     wastedata: {
         typeofwaste: {
-            ewaste: {
-                iscollected: Boolean,
-                quantity: String,
-                value: String
-            },
-            plastic: {
-                iscollected: Boolean,
-                quantity: String,
-                value: String,
-            },
-            foodwaste: {
-                iscollected: Boolean,
-                quantity: String,
-                value: String
-            },
-            other: {
-                iscollected: Boolean,
-                quantity: String,
-                value: String
-            }
+            ewaste: wastetype,
+            plastic: wastetype,
+            foodwaste: wastetype,
+            other: wastetype
         }
     }
 

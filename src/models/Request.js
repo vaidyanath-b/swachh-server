@@ -21,6 +21,11 @@ const RequestSchema = new Schema({
     other: Boolean
 
 
+  },
+  served: {
+    type: Boolean,
+    default: false
+
   }
 })
 
