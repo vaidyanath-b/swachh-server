@@ -2,14 +2,14 @@ const express = require('express')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 
-const Collector = require('../models/Collector')
+const User = require('../models/User')
 const login = async (req, res) => {
     try {
         if (!req.body.username || !req.body.password) {
             return res.status(400).json({ error: "Please enter username and password" })
         }
 
-        Collector.findOne({ "username": req.body.username })
+        User.findOne({ "username": req.body.username })
 
             .exec(err, user)
         {
@@ -56,7 +56,7 @@ const signup = async (req, res) => {
     try {
 
 
-        const user = await new Collector({
+        const user = await new User({
             username: req.body.username,
             password: bcrypt.hashSync(req.body.password, 8),
             firstName: req.body.firstName,
